@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Intellectures</string>
+    <string name="geo_location">GeoLocation</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="my_intellectures">My Intellectures</string>
+    <string name="location_confirmed">Location Confirmed</string>
+    <string name="activate_gps">Please activate GPS if no GPS data shown</string>
+</resources>
