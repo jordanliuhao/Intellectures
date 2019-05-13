@@ -17,8 +17,9 @@ import dagger.android.AndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import android.support.v4.view.ViewCompat.setFitsSystemWindows
 import com.example.intellectures.ui.gps.GpsFragment
-import com.example.intellectures.ui.video.VideoFragment
 import kotlinx.android.synthetic.main.activity_main.*
+
+
 
 
 class MainActivity : AppCompatActivity(), MainView, HasSupportFragmentInjector {
@@ -42,8 +43,8 @@ class MainActivity : AppCompatActivity(), MainView, HasSupportFragmentInjector {
     }
 
     private fun initNavigationDrawer() {
-        val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
-        val toolbar = findViewById<Toolbar>(R.id.appbar)
+        val drawerLayout = findViewById<DrawerLayout>(com.example.intellectures.R.id.drawer_layout)
+        val toolbar = findViewById<Toolbar>(com.example.intellectures.R.id.appbar)
 
         drawerToggle = EndDrawerToggle(this,
             drawerLayout,
@@ -56,7 +57,10 @@ class MainActivity : AppCompatActivity(), MainView, HasSupportFragmentInjector {
         navigation.setNavigationItemSelectedListener { item ->
             val id = item.itemId
             when(id) {
-                R.id.geo_location -> toGeoLocation()
+                com.example.intellectures.R.id.geo_location -> {
+                    toGeoLocation()
+                    drawerLayout.closeDrawer(navigation)
+                }
                 else -> { }
             }
             true
